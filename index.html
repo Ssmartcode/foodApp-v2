@@ -1,0 +1,83 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>I am foodie</title>
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Antic+Slab&family=Oxygen&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- style -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
+      integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./src/sass/main.css" />
+    <!--* script-->
+    <script defer src="./src/scripts/index.js" type="module"></script>
+  </head>
+  <body>
+    <div class="container">
+      <!-- ! HEADER -->
+      <header id="header">
+        <div class="search-input">
+          <input class="user-input" ="text" placeholder="search a recipe" />
+          <button type="submit" class="search-btn">
+            <i class="fas fa-search icon"></i>
+          </button>
+        </div>
+        <div class="logo"><img src="src/img/logo.png" alt="" /></div>
+
+        <div class="bookmarks">
+          <i class="far fa-heart icon"></i>
+          <span>Favorite food</span>
+          <ul class="dropdown">
+            <div class="message">
+              No favorite food. Find a recipe and save it
+            </div>
+          </ul>
+        </div>
+      </header>
+      <!-- ! RECIPES LIST -->
+      <div class="side-bar">
+        <p class="message p2">Your recipes will be listed here</p>
+      </div>
+      <!-- ! RECIPES INFORMATION -->
+      <div class="recipe-about">
+        <!-- <div class="recipe-about__inner">
+          <div class="recipe-about__overview">
+            <img class="recipe-image" src="${recipeData.image_url}" alt="" />
+            <h1 class="title">
+              ${recipeData.title}
+              <span class="author">by ${recipeData.publisher}</span>
+            </h1>
+            <p class="time">
+              <i class="far fa-clock"></i
+              ><strong>${recipeData.cooking_time}</strong> min
+            </p>
+            <p class="servings">
+              <i class="fas fa-users"></i
+              ><strong>${recipeData.servings}</strong> servings
+              <span class="plus">+</span> <span class="minus">-</span>
+            </p>
+            <i class="far fa-heart fa-2x recipe-bookmark"></i>
+          </div>
+          <ul class="recipe-ingredients">
+            
+          </ul>
+        </div>
+      </div> -->
+      </div>
+    </div>
+  </body>
+</html>

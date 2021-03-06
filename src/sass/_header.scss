@@ -1,0 +1,89 @@
+header {
+  background-color: $secondary-color;
+  grid-column-end: span 2;
+  border-radius: 5px 5px 1px 1px;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .logo {
+    width: 10%;
+    img {
+      height: 70px;
+      object-fit: contain;
+    }
+  }
+  .search-input {
+    position: relative;
+    .search-btn {
+      cursor: pointer;
+      background: $main-color;
+      opacity: 0.8;
+      padding: 0 1rem;
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      border: none;
+      border-radius: 0 5px 5px 0;
+      outline: none;
+      .icon {
+        color: $light-color;
+        transform: scale(1.2);
+        transition: transform 0.3s;
+      }
+      &:hover .icon {
+        transform: scale(1.4);
+      }
+    }
+  }
+  .bookmarks {
+    height: 100%;
+    cursor: pointer;
+    position: relative;
+    padding: 2rem;
+    color: $txt-color;
+    font-weight: 500;
+    font-size: 1.2rem;
+    transition: all 0.3s;
+    .dropdown {
+      background-color: $light-color;
+      position: absolute;
+      color: $txt-color;
+      padding: 1rem;
+      width: 300px;
+      bottom: 0;
+      right: 0;
+      visibility: hidden;
+      opacity: 0;
+      transform: translateY(100%);
+      transition: visibility 0.3s, opacity 1s;
+      .bookmark-item {
+        display: flex;
+        font-size: 1.1rem;
+        align-items: center;
+        margin: 0.5rem 0 1.5rem;
+        transition: color 0.3s;
+        &:hover {
+          color: $main-color;
+        }
+        img {
+          width: 65px;
+          height: 65px;
+          margin-right: 10px;
+          border-radius: 50%;
+        }
+      }
+    }
+    &:hover {
+      color: $main-color;
+    }
+    &:hover .dropdown {
+      visibility: visible;
+      opacity: 1;
+    }
+    i {
+      color: $main-color;
+    }
+  }
+}

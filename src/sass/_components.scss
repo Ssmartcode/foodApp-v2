@@ -1,0 +1,154 @@
+// colors
+$main-color: #114357;
+$secondary-color: rgb(202, 202, 202);
+$header-color: #f05151;
+$txt-color: #555;
+$light-color: #f4f4f4;
+$container-width: 1500px;
+// scrollbar
+::-webkit-scrollbar {
+  width: 8px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: $secondary-color;
+}
+::-webkit-scrollbar-thumb {
+  background: $header-color;
+  border-radius: 3px;
+}
+// fonts
+$text-font: "Montserrat", sans-serif;
+$header-font: "Antic Slab", serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: $text-font;
+  line-height: 1.4;
+  background: linear-gradient(to top, #114357, #f29492);
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+  color: $txt-color;
+  overflow: hidden;
+}
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+input {
+  display: inline-block;
+  padding: 0.75rem 1.2rem;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  font-size: 1.2rem;
+  color: $txt-color;
+}
+h1,
+h2,
+h3 {
+  color: $header-color;
+  font-family: $header-font;
+}
+h2 {
+  font-weight: 500;
+  font-size: 1.8rem;
+  line-height: 1.3;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: $txt-color;
+  font-weight: bold;
+  &:hover {
+    color: $main-color;
+  }
+}
+%btn {
+  border: none;
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+  outline: none;
+  color: $txt-color;
+  border-radius: 30px;
+  z-index: 100;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+.container {
+  max-width: $container-width;
+  margin: 3vh auto;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: 10vh 84vh;
+}
+.row {
+  display: flex;
+  justify-content: space-evenly;
+}
+.row-item {
+  margin: 0 2rem;
+}
+.icon {
+  margin: 0 0.25rem;
+}
+.message {
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+.p2 {
+  padding: 2rem;
+}
+.number-circle {
+  background: $main-color;
+  border-radius: 0.8rem;
+  color: #ffffff;
+  display: inline-block;
+  font-weight: bold;
+  line-height: 1.6rem;
+  margin-right: 15px;
+  text-align: center;
+  width: 1.6rem;
+}
+
+.glowing-circle {
+  background-color: transparent;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin: 2rem auto;
+  box-shadow: 0 0 8px $main-color, inset 0 0 8px $main-color;
+  animation: pulse 1s linear infinite;
+  p {
+    display: block;
+    line-height: 140px;
+    font-family: sans-serif;
+    font-weight: 100;
+    font-size: 24px;
+    color: $header-font;
+  }
+}
+
+// GLOWING ANIMATION
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 16px $main-color, inset 0 0 16px $main-color;
+  }
+  50% {
+    box-shadow: 0 0 24px $main-color, inset 0 0 22px $main-color;
+  }
+  100% {
+    box-shadow: 0 0 8px $main-color, inset 0 0 8px $main-color;
+  }
+}

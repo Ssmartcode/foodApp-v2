@@ -1,0 +1,403 @@
+::-webkit-scrollbar {
+  width: 8px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #cacaca;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #f05151;
+  border-radius: 3px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.4;
+  background: -webkit-gradient(linear, left bottom, left top, from(#114357), to(#f29492));
+  background: linear-gradient(to top, #114357, #f29492);
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+  color: #555;
+  overflow: hidden;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+input {
+  display: inline-block;
+  padding: 0.75rem 1.2rem;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  font-size: 1.2rem;
+  color: #555;
+}
+
+h1,
+h2,
+h3 {
+  color: #f05151;
+  font-family: "Antic Slab", serif;
+}
+
+h2 {
+  font-weight: 500;
+  font-size: 1.8rem;
+  line-height: 1.3;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #555;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #114357;
+}
+
+.container {
+  max-width: 1500px;
+  margin: 3vh auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 3fr;
+      grid-template-columns: 1fr 3fr;
+  -ms-grid-rows: 10vh 84vh;
+      grid-template-rows: 10vh 84vh;
+}
+
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.row-item {
+  margin: 0 2rem;
+}
+
+.icon {
+  margin: 0 0.25rem;
+}
+
+.message {
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.p2 {
+  padding: 2rem;
+}
+
+.number-circle {
+  background: #114357;
+  border-radius: 0.8rem;
+  color: #ffffff;
+  display: inline-block;
+  font-weight: bold;
+  line-height: 1.6rem;
+  margin-right: 15px;
+  text-align: center;
+  width: 1.6rem;
+}
+
+.glowing-circle {
+  background-color: transparent;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin: 2rem auto;
+  -webkit-box-shadow: 0 0 8px #114357, inset 0 0 8px #114357;
+          box-shadow: 0 0 8px #114357, inset 0 0 8px #114357;
+  -webkit-animation: pulse 1s linear infinite;
+          animation: pulse 1s linear infinite;
+}
+
+.glowing-circle p {
+  display: block;
+  line-height: 140px;
+  font-family: sans-serif;
+  font-weight: 100;
+  font-size: 24px;
+  color: "Antic Slab", serif;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-box-shadow: 0 0 16px #114357, inset 0 0 16px #114357;
+            box-shadow: 0 0 16px #114357, inset 0 0 16px #114357;
+  }
+  50% {
+    -webkit-box-shadow: 0 0 24px #114357, inset 0 0 22px #114357;
+            box-shadow: 0 0 24px #114357, inset 0 0 22px #114357;
+  }
+  100% {
+    -webkit-box-shadow: 0 0 8px #114357, inset 0 0 8px #114357;
+            box-shadow: 0 0 8px #114357, inset 0 0 8px #114357;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    -webkit-box-shadow: 0 0 16px #114357, inset 0 0 16px #114357;
+            box-shadow: 0 0 16px #114357, inset 0 0 16px #114357;
+  }
+  50% {
+    -webkit-box-shadow: 0 0 24px #114357, inset 0 0 22px #114357;
+            box-shadow: 0 0 24px #114357, inset 0 0 22px #114357;
+  }
+  100% {
+    -webkit-box-shadow: 0 0 8px #114357, inset 0 0 8px #114357;
+            box-shadow: 0 0 8px #114357, inset 0 0 8px #114357;
+  }
+}
+
+header {
+  background-color: #cacaca;
+  -ms-grid-column-span: 2;
+      grid-column-end: span 2;
+  border-radius: 5px 5px 1px 1px;
+  padding: 0 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .logo {
+  width: 10%;
+}
+
+header .logo img {
+  height: 70px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+header .search-input {
+  position: relative;
+}
+
+header .search-input .search-btn {
+  cursor: pointer;
+  background: #114357;
+  opacity: 0.8;
+  padding: 0 1rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  outline: none;
+}
+
+header .search-input .search-btn .icon {
+  color: #f4f4f4;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+}
+
+header .search-input .search-btn:hover .icon {
+  -webkit-transform: scale(1.4);
+          transform: scale(1.4);
+}
+
+header .bookmarks {
+  height: 100%;
+  cursor: pointer;
+  position: relative;
+  padding: 2rem;
+  color: #555;
+  font-weight: 500;
+  font-size: 1.2rem;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+header .bookmarks .dropdown {
+  background-color: #f4f4f4;
+  position: absolute;
+  color: #555;
+  padding: 1rem;
+  width: 300px;
+  bottom: 0;
+  right: 0;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+  -webkit-transition: visibility 0.3s, opacity 1s;
+  transition: visibility 0.3s, opacity 1s;
+}
+
+header .bookmarks .dropdown .bookmark-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1.1rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0.5rem 0 1.5rem;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+}
+
+header .bookmarks .dropdown .bookmark-item:hover {
+  color: #114357;
+}
+
+header .bookmarks .dropdown .bookmark-item img {
+  width: 65px;
+  height: 65px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+header .bookmarks:hover {
+  color: #114357;
+}
+
+header .bookmarks:hover .dropdown {
+  visibility: visible;
+  opacity: 1;
+}
+
+header .bookmarks i {
+  color: #114357;
+}
+
+.side-bar {
+  background-color: #d9d9d9;
+  border-radius: 1px 1px 1px 5px;
+  text-align: center;
+  overflow-y: auto;
+}
+
+.side-bar .recipes-list .recipe-item {
+  padding: 2rem;
+  cursor: pointer;
+}
+
+.side-bar .recipes-list .recipe-item img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.side-bar .recipes-list .recipe-item:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.recipe-about {
+  background-color: #fff;
+  background-image: url("https://www.transparenttextures.com/patterns/food.png");
+  background-attachment: scroll;
+  border-radius: 1px 1px 5px 1px;
+  text-align: center;
+  overflow-y: auto;
+}
+
+.recipe-about .recipe-about__inner {
+  width: 100%;
+}
+
+.recipe-about .recipe-about__inner .recipe-about__overview {
+  background-color: #f4f4f4;
+  color: #555;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: wrap;
+      flex-flow: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding-bottom: 1rem;
+  border-bottom: 3px solid #114357;
+}
+
+.recipe-about .recipe-about__inner .recipe-about__overview i {
+  margin-right: 0.75rem;
+}
+
+.recipe-about .recipe-about__inner .recipe-about__overview .recipe-image {
+  width: 100%;
+  height: 400px;
+}
+
+.recipe-about .recipe-about__inner .recipe-about__overview .title {
+  margin: 1rem 0;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+}
+
+.recipe-about .recipe-about__inner .recipe-about__overview .author {
+  font-size: 50%;
+}
+
+.recipe-about .recipe-about__inner .recipe-about__overview .recipe-bookmark {
+  color: #114357;
+  cursor: pointer;
+  -webkit-transform: translateY(-25%);
+          transform: translateY(-25%);
+}
+
+.recipe-about .recipe-about__inner .recipe-about__overview .recipe-bookmark:hover {
+  -webkit-transform: scale(1.1) translateY(-25%);
+          transform: scale(1.1) translateY(-25%);
+}
+
+.recipe-about .recipe-about__inner .recipe-ingredients {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding: 5rem;
+}
+
+.recipe-about .recipe-about__inner .recipe-ingredients .ingredient {
+  text-align: left;
+}
+/*# sourceMappingURL=main.css.map */
