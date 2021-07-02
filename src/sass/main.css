@@ -15,14 +15,12 @@
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
   font-family: "Montserrat", sans-serif;
   line-height: 1.4;
-  background: -webkit-gradient(linear, left bottom, left top, from(#114357), to(#f29492));
   background: linear-gradient(to top, #114357, #f29492);
   /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
   color: #555;
@@ -32,10 +30,8 @@ body {
 img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
+  object-fit: cover;
+  object-position: center;
 }
 
 input {
@@ -72,7 +68,6 @@ a {
   color: #555;
   font-weight: bold;
 }
-
 a:hover {
   color: #114357;
 }
@@ -80,21 +75,14 @@ a:hover {
 .container {
   max-width: 1500px;
   margin: 3vh auto;
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 3fr;
-      grid-template-columns: 1fr 3fr;
-  -ms-grid-rows: 10vh 84vh;
-      grid-template-rows: 10vh 84vh;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: 10vh 84vh;
 }
 
 .row {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  justify-content: space-evenly;
 }
 
 .row-item {
@@ -132,12 +120,9 @@ a:hover {
   height: 150px;
   border-radius: 50%;
   margin: 2rem auto;
-  -webkit-box-shadow: 0 0 8px #114357, inset 0 0 8px #114357;
-          box-shadow: 0 0 8px #114357, inset 0 0 8px #114357;
-  -webkit-animation: pulse 1s linear infinite;
-          animation: pulse 1s linear infinite;
+  box-shadow: 0 0 8px #114357, inset 0 0 8px #114357;
+  animation: pulse 1s linear infinite;
 }
-
 .glowing-circle p {
   display: block;
   line-height: 140px;
@@ -147,67 +132,71 @@ a:hover {
   color: "Antic Slab", serif;
 }
 
-@-webkit-keyframes pulse {
-  0% {
-    -webkit-box-shadow: 0 0 16px #114357, inset 0 0 16px #114357;
-            box-shadow: 0 0 16px #114357, inset 0 0 16px #114357;
-  }
-  50% {
-    -webkit-box-shadow: 0 0 24px #114357, inset 0 0 22px #114357;
-            box-shadow: 0 0 24px #114357, inset 0 0 22px #114357;
-  }
-  100% {
-    -webkit-box-shadow: 0 0 8px #114357, inset 0 0 8px #114357;
-            box-shadow: 0 0 8px #114357, inset 0 0 8px #114357;
-  }
+.warning {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(25, 25, 25, 0.8);
+  display: none;
+  z-index: 1000;
+  padding: 0 1rem;
+  text-align: center;
+}
+.warning::after {
+  align-items: center;
+  color: #fff;
+  content: "This website is not working properly on mobile devices or small screens";
+  display: flex;
+  font-size: 1.3rem;
+  font-weight: 500;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
 }
 
 @keyframes pulse {
   0% {
-    -webkit-box-shadow: 0 0 16px #114357, inset 0 0 16px #114357;
-            box-shadow: 0 0 16px #114357, inset 0 0 16px #114357;
+    box-shadow: 0 0 16px #114357, inset 0 0 16px #114357;
   }
   50% {
-    -webkit-box-shadow: 0 0 24px #114357, inset 0 0 22px #114357;
-            box-shadow: 0 0 24px #114357, inset 0 0 22px #114357;
+    box-shadow: 0 0 24px #114357, inset 0 0 22px #114357;
   }
   100% {
-    -webkit-box-shadow: 0 0 8px #114357, inset 0 0 8px #114357;
-            box-shadow: 0 0 8px #114357, inset 0 0 8px #114357;
+    box-shadow: 0 0 8px #114357, inset 0 0 8px #114357;
   }
 }
+@media screen and (max-width: 800px) {
+  html,
+body,
+.container {
+    overflow: hidden;
+  }
 
+  .warning {
+    display: block;
+  }
+}
 header {
   background-color: #cacaca;
-  -ms-grid-column-span: 2;
-      grid-column-end: span 2;
+  grid-column-end: span 2;
   border-radius: 5px 5px 1px 1px;
   padding: 0 2rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-between;
+  align-items: center;
 }
-
 header .logo {
   width: 10%;
 }
-
 header .logo img {
   height: 70px;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
-
 header .search-input {
   position: relative;
 }
-
 header .search-input .search-btn {
   cursor: pointer;
   background: #114357;
@@ -221,22 +210,14 @@ header .search-input .search-btn {
   border-radius: 0 5px 5px 0;
   outline: none;
 }
-
 header .search-input .search-btn .icon {
   color: #f4f4f4;
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
-  -webkit-transition: -webkit-transform 0.3s;
-  transition: -webkit-transform 0.3s;
+  transform: scale(1.2);
   transition: transform 0.3s;
-  transition: transform 0.3s, -webkit-transform 0.3s;
 }
-
 header .search-input .search-btn:hover .icon {
-  -webkit-transform: scale(1.4);
-          transform: scale(1.4);
+  transform: scale(1.4);
 }
-
 header .bookmarks {
   height: 100%;
   cursor: pointer;
@@ -245,10 +226,8 @@ header .bookmarks {
   color: #555;
   font-weight: 500;
   font-size: 1.2rem;
-  -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
-
 header .bookmarks .dropdown {
   background-color: #f4f4f4;
   position: absolute;
@@ -259,45 +238,32 @@ header .bookmarks .dropdown {
   right: 0;
   visibility: hidden;
   opacity: 0;
-  -webkit-transform: translateY(100%);
-          transform: translateY(100%);
-  -webkit-transition: visibility 0.3s, opacity 1s;
+  transform: translateY(100%);
   transition: visibility 0.3s, opacity 1s;
 }
-
 header .bookmarks .dropdown .bookmark-item {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   font-size: 1.1rem;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   margin: 0.5rem 0 1.5rem;
-  -webkit-transition: color 0.3s;
   transition: color 0.3s;
 }
-
 header .bookmarks .dropdown .bookmark-item:hover {
   color: #114357;
 }
-
 header .bookmarks .dropdown .bookmark-item img {
   width: 65px;
   height: 65px;
   margin-right: 10px;
   border-radius: 50%;
 }
-
 header .bookmarks:hover {
   color: #114357;
 }
-
 header .bookmarks:hover .dropdown {
   visibility: visible;
   opacity: 1;
 }
-
 header .bookmarks i {
   color: #114357;
 }
@@ -308,20 +274,16 @@ header .bookmarks i {
   text-align: center;
   overflow-y: auto;
 }
-
 .side-bar .recipes-list .recipe-item {
   padding: 2rem;
   cursor: pointer;
 }
-
 .side-bar .recipes-list .recipe-item img {
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   width: 100px;
   height: 100px;
   border-radius: 50%;
 }
-
 .side-bar .recipes-list .recipe-item:hover {
   background-color: rgba(0, 0, 0, 0.1);
 }
@@ -334,70 +296,50 @@ header .bookmarks i {
   text-align: center;
   overflow-y: auto;
 }
-
 .recipe-about .recipe-about__inner {
   width: 100%;
 }
-
 .recipe-about .recipe-about__inner .recipe-about__overview {
   background-color: #f4f4f4;
   color: #555;
   text-align: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-flow: wrap;
-      flex-flow: wrap;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  flex-flow: wrap;
+  justify-content: space-around;
   padding-bottom: 1rem;
   border-bottom: 3px solid #114357;
 }
-
 .recipe-about .recipe-about__inner .recipe-about__overview i {
   margin-right: 0.75rem;
 }
-
 .recipe-about .recipe-about__inner .recipe-about__overview .recipe-image {
   width: 100%;
   height: 400px;
 }
-
 .recipe-about .recipe-about__inner .recipe-about__overview .title {
   margin: 1rem 0;
-  -ms-flex-preferred-size: 100%;
-      flex-basis: 100%;
+  flex-basis: 100%;
 }
-
 .recipe-about .recipe-about__inner .recipe-about__overview .author {
   font-size: 50%;
 }
-
 .recipe-about .recipe-about__inner .recipe-about__overview .recipe-bookmark {
   color: #114357;
   cursor: pointer;
-  -webkit-transform: translateY(-25%);
-          transform: translateY(-25%);
+  transform: translateY(-25%);
 }
-
 .recipe-about .recipe-about__inner .recipe-about__overview .recipe-bookmark:hover {
-  -webkit-transform: scale(1.1) translateY(-25%);
-          transform: scale(1.1) translateY(-25%);
+  transform: scale(1.1) translateY(-25%);
 }
-
 .recipe-about .recipe-about__inner .recipe-ingredients {
-  display: -ms-grid;
   display: grid;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -ms-grid-columns: (1fr)[3];
-      grid-template-columns: repeat(3, 1fr);
+  justify-content: flex-start;
+  grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
   padding: 5rem;
 }
-
 .recipe-about .recipe-about__inner .recipe-ingredients .ingredient {
   text-align: left;
 }
+
 /*# sourceMappingURL=main.css.map */

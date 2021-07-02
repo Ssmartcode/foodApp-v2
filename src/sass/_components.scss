@@ -140,6 +140,30 @@ a {
   }
 }
 
+.warning {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(25, 25, 25, 0.8);
+  display: none;
+  z-index: 1000;
+  padding: 0 1rem;
+  text-align: center;
+  &::after {
+    align-items: center;
+    color: #fff;
+    content: "This website is not working properly on mobile devices or small screens";
+    display: flex;
+    font-size: 1.3rem;
+    font-weight: 500;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+}
+
 // GLOWING ANIMATION
 @keyframes pulse {
   0% {
@@ -150,5 +174,16 @@ a {
   }
   100% {
     box-shadow: 0 0 8px $main-color, inset 0 0 8px $main-color;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  html,
+  body,
+  .container {
+    overflow: hidden;
+  }
+  .warning {
+    display: block;
   }
 }
